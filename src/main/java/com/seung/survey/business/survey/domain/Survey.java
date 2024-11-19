@@ -20,19 +20,20 @@ import java.util.List;
 public class Survey {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "bigint COMMENT '설문지 아이디'")
     private Long surveyId;
-    @Column
+    @Column(columnDefinition = "mediumText COMMENT '추가 기본 정보 수집'")
     @Convert(converter = StringConverter.class)
     private List<String> custom;
-    @Column
+    @Column(columnDefinition = "mediumText COMMENT '평가 요소'")
     @Convert(converter = ElementConverter.class)
     private List<SurveyRequest> elements;
-    @Column
+    @Column(columnDefinition = "LocalDateTime COMMENT '유효기간(만료)'")
     private LocalDateTime endDate;
-    @Column
+    @Column(columnDefinition = "varchar(255) COMMENT '설문지 제목'")
     private String title;
-    @Column
+    @Column(columnDefinition = "mediumText COMMENT '설문지 설명'")
     private String content;
-    @Column
+    @Column(columnDefinition = "bigint COMMENT '서비스 아이디'")
     private Long projectId;
 }

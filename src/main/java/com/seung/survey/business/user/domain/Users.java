@@ -14,18 +14,19 @@ import lombok.NoArgsConstructor;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "bigint COMMENT '사용자 아이디'")
     private Long userId;
-    @Column
+    @Column(columnDefinition = "varchar(50) COMMENT '휴대폰 번호'")
     private String phoneNum;
-    @Column
+    @Column(columnDefinition = "varchar(255) COMMENT '주소'")
     private String address;
-    @Column
+    @Column(columnDefinition = "varchar(255) COMMENT '상세주소'")
     private String addressDetails;
-    @Column
+    @Column(columnDefinition = "varchar(100) COMMENT '매장명'")
     private String storeName;
-    @Column
+    @Column(columnDefinition = "varchar(255) COMMENT '계정 아이디'")
     private String accountId;
-    @Column
+    @Column(columnDefinition = "varchar(255) COMMENT '비밀번호'")
     private String password;
 
 }
